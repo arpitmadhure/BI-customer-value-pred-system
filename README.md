@@ -1,51 +1,53 @@
 # Business Intelligence & Customer Value Prediction System
 
-This project focuses on analyzing customer purchasing behavior using historical online retail transaction data. Customers are segmented into different value groups using the RFM (Recency, Frequency, Monetary) framework, and a Machine Learning model is trained to predict customer value based on these features.
+This project analyzes customer purchasing behavior using an online retail transaction dataset and predicts customer value segments using Machine Learning. The project combines Business Intelligence techniques with the RFM (Recency, Frequency, Monetary) framework to classify customers into High, Medium, and Low value groups.
 
-A Streamlit application has also been developed to allow users to enter customer information and instantly predict the customer segment.
+A Streamlit web application is included to allow users to enter customer information and predict the customer segment in real time.
 
 ## Project Objectives
 
 - Analyze customer purchasing behavior
-- Perform data cleaning and preprocessing
-- Generate customer segments using RFM analysis
+- Clean and preprocess raw transaction data
+- Perform customer segmentation using RFM analysis
 - Train a Machine Learning classification model
-- Build an interactive Streamlit application for prediction
+- Deploy the model using Streamlit
 
 ## Dataset
 
-The project uses the **Online Retail Dataset**, which contains transactional data from an online retail store.
+The project uses the **Online Retail Dataset**, which contains transaction records from an online retail store.
 
-The dataset includes:
+### Dataset Features
 
-- Invoice Number
-- Product Code
-- Product Description
-- Quantity
-- Unit Price
-- Invoice Date
-- Customer ID
-- Country
+| Feature | Description |
+|---------|-------------|
+| InvoiceNo | Transaction ID |
+| StockCode | Product Code |
+| Description | Product Name |
+| Quantity | Quantity Purchased |
+| InvoiceDate | Purchase Date |
+| UnitPrice | Price per Unit |
+| CustomerID | Customer ID |
+| Country | Customer Country |
 
-Total Records: **541,908**
+**Total Records:** 541,908
 
-## Project Workflow
+## Workflow
 
-```
-Raw Data
-    ↓
+```text
+Raw Transaction Data
+        ↓
 Data Cleaning
-    ↓
+        ↓
 Exploratory Data Analysis
-    ↓
+        ↓
 RFM Feature Engineering
-    ↓
+        ↓
 Customer Segmentation
-    ↓
+        ↓
 Model Training
-    ↓
+        ↓
 Model Evaluation
-    ↓
+        ↓
 Streamlit Deployment
 ```
 
@@ -54,20 +56,22 @@ Streamlit Deployment
 The following preprocessing steps were performed before training the model:
 
 - Removed cancelled transactions
-- Removed invalid quantities and prices
+- Removed invalid quantity values
+- Removed invalid unit prices
 - Removed missing Customer IDs
 - Created a Revenue feature
-- Prepared customer-level RFM features
 
-## RFM Analysis
+Revenue = Quantity × UnitPrice
 
-Customers were evaluated using three metrics:
+## Customer Segmentation
 
-**Recency** – Number of days since the last purchase
+Customers were segmented using the RFM framework.
 
-**Frequency** – Total number of purchases
+**Recency** – Number of days since the customer's last purchase.
 
-**Monetary** – Total amount spent by the customer
+**Frequency** – Total number of purchases made by the customer.
+
+**Monetary** – Total amount spent by the customer.
 
 Based on the RFM score, customers were classified into:
 
@@ -77,9 +81,9 @@ Based on the RFM score, customers were classified into:
 
 ## Machine Learning Model
 
-**Algorithm Used**
+**Algorithm**
 
-- Logistic Regression
+Logistic Regression
 
 **Input Features**
 
@@ -87,13 +91,13 @@ Based on the RFM score, customers were classified into:
 - Frequency
 - Monetary
 
-**Target Variable**
+**Target**
 
-- Customer Segment
+Customer Value Segment
 
 The model was evaluated using train-test split and cross-validation.
 
-**Model Accuracy:** Approximately **88%**
+**Accuracy:** Approximately **88%**
 
 ## Technologies Used
 
@@ -108,7 +112,7 @@ The model was evaluated using train-test split and cross-validation.
 
 ## Project Structure
 
-```
+```text
 Business-Intelligence-Customer-Value-Prediction/
 
 │── app.py
@@ -124,10 +128,10 @@ Business-Intelligence-Customer-Value-Prediction/
 Clone the repository
 
 ```bash
-git clone https://github.com/your-github-username/business-intelligence-customer-value-prediction.git
+git clone https://github.com/arpitmadhure/business-intelligence-customer-value-prediction.git
 ```
 
-Move into the project folder
+Go to the project directory
 
 ```bash
 cd business-intelligence-customer-value-prediction
@@ -139,7 +143,7 @@ Install the required libraries
 pip install -r requirements.txt
 ```
 
-Run the Streamlit application
+Run the application
 
 ```bash
 streamlit run app.py
@@ -147,10 +151,10 @@ streamlit run app.py
 
 ## Future Improvements
 
-- Improve model performance using advanced algorithms
-- Add interactive business dashboards
-- Include additional customer behavior features
-- Deploy the application on Streamlit Cloud
+- Improve prediction accuracy using advanced machine learning models
+- Add interactive dashboards
+- Support batch customer predictions
+- Deploy the application using cloud services
 
 ## Author
 
@@ -158,4 +162,4 @@ streamlit run app.py
 
 B.Tech Computer Science & Engineering (Data Science)
 
-GitHub: https://github.com/your-github-username
+GitHub: https://github.com/arpitmadhure
