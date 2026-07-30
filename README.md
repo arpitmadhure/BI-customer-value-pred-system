@@ -1,4 +1,8 @@
-You can launch the project through arpit-customer-value-prediction.streamlit.app # Business Intelligence & Customer Value Prediction System
+Explore the deployed application here:
+
+https://arpit-customer-value-prediction.streamlit.app
+
+# Business Intelligence & Customer Value Prediction System
 
 This project analyzes customer purchasing behavior using an online retail transaction dataset and predicts customer value segments using Machine Learning. The project combines Business Intelligence techniques with the RFM (Recency, Frequency, Monetary) framework to classify customers into High, Medium, and Low value groups.
 
